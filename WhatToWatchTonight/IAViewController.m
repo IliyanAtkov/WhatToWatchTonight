@@ -1,18 +1,10 @@
-//
-//  ViewController.m
-//  WhatToWatchTonight
-//
-//  Created by Producenta on 1/31/16.
-//  Copyright © 2016 Iliyan Atkov. All rights reserved.
-//
+#import "IAViewController.h"
 
-#import "ViewController.h"
-
-@interface ViewController ()
+@interface IAViewController ()
 
 @end
 
-@implementation ViewController
+@implementation IAViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -1,18 +1,10 @@
-//
-//  AppDelegate.m
-//  WhatToWatchTonight
-//
-//  Created by Producenta on 1/31/16.
-//  Copyright © 2016 Iliyan Atkov. All rights reserved.
-//
+#import "IAAppDelegate.h"
 
-#import "AppDelegate.h"
-
-@interface AppDelegate ()
+@interface IAAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation IAAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
