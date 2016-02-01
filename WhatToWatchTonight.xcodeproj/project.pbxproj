@@ -13,9 +13,12 @@
 		AB8F5CBA1C5E90F60055E98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CB81C5E90F60055E98C /* Main.storyboard */; };
 		AB8F5CBC1C5E90F60055E98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */; };
 		AB8F5CBF1C5E90F60055E98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBD1C5E90F60055E98C /* LaunchScreen.storyboard */; };
+		C10D92EAECDF969CD9183FED /* libPods-WhatToWatchTonight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A4DB2535695212089D0A5F1 /* Pods-WhatToWatchTonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWatchTonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight.release.xcconfig"; sourceTree = "<group>"; };
+		0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhatToWatchTonight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8F5CAC1C5E90F50055E98C /* WhatToWatchTonight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToWatchTonight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8F5CB01C5E90F50055E98C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB8F5CB21C5E90F50055E98C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8F5CBE1C5E90F60055E98C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8F5CC01C5E90F60055E98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1174208E1F4607B7BC99E8F /* Pods-WhatToWatchTonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWatchTonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10D92EAECDF969CD9183FED /* libPods-WhatToWatchTonight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06542FDDEBFD0DE9984719A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1174208E1F4607B7BC99E8F /* Pods-WhatToWatchTonight.debug.xcconfig */,
+				0A4DB2535695212089D0A5F1 /* Pods-WhatToWatchTonight.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6BAC04DCA9088969479EC43E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AB8F5CA31C5E90F50055E98C = {
 			isa = PBXGroup;
 			children = (
 				AB8F5CAE1C5E90F50055E98C /* WhatToWatchTonight */,
 				AB8F5CAD1C5E90F50055E98C /* Products */,
+				06542FDDEBFD0DE9984719A5 /* Pods */,
+				6BAC04DCA9088969479EC43E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB8F5CC31C5E90F60055E98C /* Build configuration list for PBXNativeTarget "WhatToWatchTonight" */;
 			buildPhases = (
+				D95616209B0B8A0616023DFB /* Check Pods Manifest.lock */,
 				AB8F5CA81C5E90F50055E98C /* Sources */,
 				AB8F5CA91C5E90F50055E98C /* Frameworks */,
 				AB8F5CAA1C5E90F50055E98C /* Resources */,
+				8BFA5C055CAC2013A2BDB791 /* Embed Pods Frameworks */,
+				A69541624337BAE31B61F1BD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8BFA5C055CAC2013A2BDB791 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A69541624337BAE31B61F1BD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D95616209B0B8A0616023DFB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB8F5CA81C5E90F50055E98C /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		AB8F5CC41C5E90F60055E98C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1174208E1F4607B7BC99E8F /* Pods-WhatToWatchTonight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WhatToWatchTonight/Info.plist;
@@ -272,6 +348,7 @@
 		};
 		AB8F5CC51C5E90F60055E98C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A4DB2535695212089D0A5F1 /* Pods-WhatToWatchTonight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WhatToWatchTonight/Info.plist;
@@ -300,6 +377,7 @@
 				AB8F5CC51C5E90F60055E98C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
