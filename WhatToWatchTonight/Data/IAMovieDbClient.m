@@ -4,16 +4,19 @@
 @implementation IAMovieDbClient
 
 
--(NSArray *)getMovieWithId {
-    NSDictionary *parameters = @{
-                                 @"api_key" : @"1a66de8b5fd64165ba0e013578af737b"
-                                 };
+-(instancetype)init {
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    config.HTTPAdditionalHeaders =  @{
+                                      @"Accept":@"application/json",
+                                      @"Content-Type":@"application/json"
+                                      };
     
-     [self GET:@"movie/2" parameters:parameters completion:^(OVCResponse *response, NSError *error) {
-        return NSArray *movie = response.result;
-    }];
+    self = [super initWithBaseURL:[NSURL URLWithString:@"https://api.themoviedb.org/3/"] sessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
-    return movie;
+    return self;
+}
+-(void)getMovieWithId {
+
 }
 
 +(NSDictionary *)modelClassesByResourcePath {

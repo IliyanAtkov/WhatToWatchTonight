@@ -3,5 +3,6 @@
 #import "IAMovie.h"
 
 @interface IAMovieDbClient : OVCHTTPSessionManager
--(NSArray *)getMovieWithId;
+-(instancetype) init;
+-(void)getMovieWithId;
 @end

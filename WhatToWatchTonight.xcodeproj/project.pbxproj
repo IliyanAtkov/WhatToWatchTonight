@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB27E88D1C62379A0056D21F /* IAGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB27E88C1C62379A0056D21F /* IAGenre.m */; };
 		AB3F49BB1C5F941600F677B9 /* IAMoviePopular.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49BA1C5F941600F677B9 /* IAMoviePopular.m */; };
 		AB3F49BE1C5F959400F677B9 /* IAMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49BD1C5F959400F677B9 /* IAMovie.m */; };
 		AB3F49C21C5F9FC100F677B9 /* IAFormatterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49C11C5F9FC100F677B9 /* IAFormatterHelper.m */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		0A4DB2535695212089D0A5F1 /* Pods-WhatToWatchTonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWatchTonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight.release.xcconfig"; sourceTree = "<group>"; };
 		0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhatToWatchTonight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB27E88B1C62379A0056D21F /* IAGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAGenre.h; path = Models/IAGenre.h; sourceTree = "<group>"; };
+		AB27E88C1C62379A0056D21F /* IAGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAGenre.m; path = Models/IAGenre.m; sourceTree = "<group>"; };
 		AB3F49B91C5F941600F677B9 /* IAMoviePopular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMoviePopular.h; path = Models/IAMoviePopular.h; sourceTree = "<group>"; };
 		AB3F49BA1C5F941600F677B9 /* IAMoviePopular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAMoviePopular.m; path = Models/IAMoviePopular.m; sourceTree = "<group>"; };
 		AB3F49BC1C5F959400F677B9 /* IAMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMovie.h; path = Models/IAMovie.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				AB3F49BA1C5F941600F677B9 /* IAMoviePopular.m */,
 				AB3F49BC1C5F959400F677B9 /* IAMovie.h */,
 				AB3F49BD1C5F959400F677B9 /* IAMovie.m */,
+				AB27E88C1C62379A0056D21F /* IAGenre.m */,
+				AB27E88B1C62379A0056D21F /* IAGenre.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				AB3F49C61C5FA2E300F677B9 /* IAMovieDbClient.m in Sources */,
 				AB8F5CB41C5E90F50055E98C /* IAAppDelegate.m in Sources */,
 				AB8F5CB11C5E90F50055E98C /* main.m in Sources */,
+				AB27E88D1C62379A0056D21F /* IAGenre.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
