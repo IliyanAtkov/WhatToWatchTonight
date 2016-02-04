@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB24BE5B1C6364CE007CF427 /* IAUrlConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24BE5A1C6364CE007CF427 /* IAUrlConstants.m */; };
+		AB24BE5F1C636A4D007CF427 /* IAMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24BE5E1C636A4D007CF427 /* IAMovieViewController.m */; };
+		AB24BE641C636AE4007CF427 /* IAPopularMoviesController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24BE631C636AE4007CF427 /* IAPopularMoviesController.m */; };
 		AB27E88D1C62379A0056D21F /* IAGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB27E88C1C62379A0056D21F /* IAGenre.m */; };
 		AB3F49BB1C5F941600F677B9 /* IAMoviePopular.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49BA1C5F941600F677B9 /* IAMoviePopular.m */; };
 		AB3F49BE1C5F959400F677B9 /* IAMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49BD1C5F959400F677B9 /* IAMovie.m */; };
@@ -14,7 +17,6 @@
 		AB3F49C61C5FA2E300F677B9 /* IAMovieDbClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49C51C5FA2E300F677B9 /* IAMovieDbClient.m */; };
 		AB8F5CB11C5E90F50055E98C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F5CB01C5E90F50055E98C /* main.m */; };
 		AB8F5CB41C5E90F50055E98C /* IAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F5CB31C5E90F50055E98C /* IAAppDelegate.m */; };
-		AB8F5CB71C5E90F50055E98C /* IAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F5CB61C5E90F50055E98C /* IAViewController.m */; };
 		AB8F5CBA1C5E90F60055E98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CB81C5E90F60055E98C /* Main.storyboard */; };
 		AB8F5CBC1C5E90F60055E98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */; };
 		AB8F5CBF1C5E90F60055E98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBD1C5E90F60055E98C /* LaunchScreen.storyboard */; };
@@ -24,6 +26,12 @@
 /* Begin PBXFileReference section */
 		0A4DB2535695212089D0A5F1 /* Pods-WhatToWatchTonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWatchTonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight.release.xcconfig"; sourceTree = "<group>"; };
 		0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhatToWatchTonight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB24BE591C6364CE007CF427 /* IAUrlConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAUrlConstants.h; path = Constants/IAUrlConstants.h; sourceTree = "<group>"; };
+		AB24BE5A1C6364CE007CF427 /* IAUrlConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAUrlConstants.m; path = Constants/IAUrlConstants.m; sourceTree = "<group>"; };
+		AB24BE5D1C636A4D007CF427 /* IAMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMovieViewController.h; path = ViewControllers/IAMovieViewController.h; sourceTree = "<group>"; };
+		AB24BE5E1C636A4D007CF427 /* IAMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAMovieViewController.m; path = ViewControllers/IAMovieViewController.m; sourceTree = "<group>"; };
+		AB24BE621C636AE4007CF427 /* IAPopularMoviesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAPopularMoviesController.h; path = ViewControllers/IAPopularMoviesController.h; sourceTree = "<group>"; };
+		AB24BE631C636AE4007CF427 /* IAPopularMoviesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPopularMoviesController.m; path = ViewControllers/IAPopularMoviesController.m; sourceTree = "<group>"; };
 		AB27E88B1C62379A0056D21F /* IAGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAGenre.h; path = Models/IAGenre.h; sourceTree = "<group>"; };
 		AB27E88C1C62379A0056D21F /* IAGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAGenre.m; path = Models/IAGenre.m; sourceTree = "<group>"; };
 		AB3F49B91C5F941600F677B9 /* IAMoviePopular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMoviePopular.h; path = Models/IAMoviePopular.h; sourceTree = "<group>"; };
@@ -38,8 +46,6 @@
 		AB8F5CB01C5E90F50055E98C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB8F5CB21C5E90F50055E98C /* IAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAAppDelegate.h; sourceTree = "<group>"; };
 		AB8F5CB31C5E90F50055E98C /* IAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAAppDelegate.m; sourceTree = "<group>"; };
-		AB8F5CB51C5E90F50055E98C /* IAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAViewController.h; sourceTree = "<group>"; };
-		AB8F5CB61C5E90F50055E98C /* IAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAViewController.m; sourceTree = "<group>"; };
 		AB8F5CB91C5E90F60055E98C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8F5CBE1C5E90F60055E98C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +80,26 @@
 				0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB24BE581C6364A8007CF427 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AB24BE591C6364CE007CF427 /* IAUrlConstants.h */,
+				AB24BE5A1C6364CE007CF427 /* IAUrlConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		AB24BE5C1C6369ED007CF427 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB24BE621C636AE4007CF427 /* IAPopularMoviesController.h */,
+				AB24BE631C636AE4007CF427 /* IAPopularMoviesController.m */,
+				AB24BE5D1C636A4D007CF427 /* IAMovieViewController.h */,
+				AB24BE5E1C636A4D007CF427 /* IAMovieViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		AB3F49B81C5F92FF00F677B9 /* Models */ = {
@@ -128,13 +154,13 @@
 		AB8F5CAE1C5E90F50055E98C /* WhatToWatchTonight */ = {
 			isa = PBXGroup;
 			children = (
+				AB24BE5C1C6369ED007CF427 /* ViewControllers */,
+				AB24BE581C6364A8007CF427 /* Constants */,
 				AB3F49C31C5FA2C200F677B9 /* Data */,
 				AB3F49BF1C5F9F9D00F677B9 /* Helpers */,
 				AB3F49B81C5F92FF00F677B9 /* Models */,
 				AB8F5CB21C5E90F50055E98C /* IAAppDelegate.h */,
 				AB8F5CB31C5E90F50055E98C /* IAAppDelegate.m */,
-				AB8F5CB51C5E90F50055E98C /* IAViewController.h */,
-				AB8F5CB61C5E90F50055E98C /* IAViewController.m */,
 				AB8F5CB81C5E90F60055E98C /* Main.storyboard */,
 				AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */,
 				AB8F5CBD1C5E90F60055E98C /* LaunchScreen.storyboard */,
@@ -274,12 +300,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3F49BB1C5F941600F677B9 /* IAMoviePopular.m in Sources */,
-				AB8F5CB71C5E90F50055E98C /* IAViewController.m in Sources */,
 				AB3F49C21C5F9FC100F677B9 /* IAFormatterHelper.m in Sources */,
 				AB3F49BE1C5F959400F677B9 /* IAMovie.m in Sources */,
 				AB3F49C61C5FA2E300F677B9 /* IAMovieDbClient.m in Sources */,
+				AB24BE5B1C6364CE007CF427 /* IAUrlConstants.m in Sources */,
 				AB8F5CB41C5E90F50055E98C /* IAAppDelegate.m in Sources */,
+				AB24BE5F1C636A4D007CF427 /* IAMovieViewController.m in Sources */,
 				AB8F5CB11C5E90F50055E98C /* main.m in Sources */,
+				AB24BE641C636AE4007CF427 /* IAPopularMoviesController.m in Sources */,
 				AB27E88D1C62379A0056D21F /* IAGenre.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

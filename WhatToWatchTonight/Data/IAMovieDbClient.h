@@ -4,5 +4,4 @@
 
 @interface IAMovieDbClient : OVCHTTPSessionManager
 -(instancetype) init;
--(void)getMovieWithId;
 @end

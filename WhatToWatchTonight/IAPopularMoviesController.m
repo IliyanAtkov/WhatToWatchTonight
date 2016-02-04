@@ -1,11 +1,11 @@
-#import "IAViewController.h"
+#import "IAPopularMoviesController.h"
 #import "IAMovieDbClient.h"
 #import <Mantle/Mantle.h>
 
-@interface IAViewController ()
+@interface IAPopularMoviesController ()
 @end
 
-@implementation IAViewController
+@implementation IAPopularMoviesController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
