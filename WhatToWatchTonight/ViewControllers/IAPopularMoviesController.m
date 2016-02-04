@@ -12,6 +12,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    IAMovieDbClient *client = [[IAMovieDbClient alloc] init];
+    NSDictionary *parameters = @{
+                                   IAApiKeyName : IAApiKeyValue
+                                 };
+    
+    [client GET:IAUrlPopularMovies parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        <#code#>
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        <#code#>
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        <#code#>
+    }]
   //  IAMovieDbClient *client = [[IAMovieDbClient alloc] init];
    //NSDictionary *parameters = @{
    //                              IAApiKeyName : IAApiKeyValue

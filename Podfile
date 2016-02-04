@@ -8,6 +8,7 @@ xcodeproj ‘WhatToWatchTonight’
 target 'WhatToWatchTonight' do
 
 pod 'Overcoat', '~> 4.0.0-beta.1'
+pod 'MBProgressHUD', '~> 0.9.2'
 
 end
 

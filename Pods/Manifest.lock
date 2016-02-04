@@ -9,6 +9,7 @@ PODS:
   - Mantle (2.0.6):
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
+  - MBProgressHUD (0.9.2)
   - Overcoat (4.0.0-beta.1):
     - Overcoat/Core (= 4.0.0-beta.1)
   - Overcoat/Core (4.0.0-beta.1):
@@ -17,11 +18,13 @@ PODS:
     - Mantle (~> 2.0)
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 0.9.2)
   - Overcoat (~> 4.0.0-beta.1)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Overcoat: a983d4a93b7f34f5d405f525e072dd0d345ec2d2
 
 COCOAPODS: 0.39.0
