@@ -1,9 +1,10 @@
-#import "IAMoviePopular.h"
+#import "IAMoviesCollection.h"
 #import "IAMovie.h"
 
-@implementation IAMoviePopular
+@implementation IAMoviesCollection
 
-+(NSDictionary *)JSONTransformerForKey:(NSString *)key {
+
++(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"currentPage" : @"page",
              @"movies" : @"results"

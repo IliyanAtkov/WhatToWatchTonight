@@ -5,49 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--POPULAR-->
-        <scene sceneID="piW-4P-rLo">
-            <objects>
-                <collectionViewController id="Wjb-bh-Ema" customClass="IAPopularMoviesController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EXO-r7-7LU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wio-EU-nFG">
-                            <size key="itemSize" width="203" height="205"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ejL-Ei-wjI">
-                                <rect key="frame" x="0.0" y="64" width="203" height="205"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="203" height="205"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsd-0u-8IN">
-                                            <rect key="frame" x="8" y="176" width="187" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="Wjb-bh-Ema" id="qkF-pn-F1L"/>
-                            <outlet property="delegate" destination="Wjb-bh-Ema" id="MqQ-8t-Xce"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="POPULAR" id="MzZ-QI-Uzd"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xap-XW-E1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="13120" y="1634"/>
-        </scene>
         <!--dam-->
         <scene sceneID="fQs-ZT-Yzj">
             <objects>
@@ -60,12 +17,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Wjb-bh-Ema" kind="relationship" relationship="rootViewController" id="PPd-Li-ysm"/>
+                        <segue destination="tBf-no-cc6" kind="relationship" relationship="rootViewController" id="dT2-AW-emI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpn-sX-Smt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12459" y="1634"/>
+        </scene>
+        <!--Movies View Controller-->
+        <scene sceneID="H29-kn-tij">
+            <objects>
+                <tableViewController id="tBf-no-cc6" customClass="IAMoviesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V1t-Sh-soj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="tBf-no-cc6" id="deV-Kw-ZZN"/>
+                            <outlet property="delegate" destination="tBf-no-cc6" id="bym-3r-aUX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="DhQ-oU-cTF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqr-Ob-lrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13088" y="1634"/>
         </scene>
         <!--POPULAR TV-->
         <scene sceneID="idi-gR-KI3">
