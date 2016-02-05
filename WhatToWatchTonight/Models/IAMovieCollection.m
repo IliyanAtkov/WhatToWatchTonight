@@ -6,7 +6,7 @@
     return @{
              @"movieId": @"id",
              @"title": @"original_title",
-             @"image" : @"poster_path"
+             @"urlImage" : @"poster_path"
              };
 }
 @end

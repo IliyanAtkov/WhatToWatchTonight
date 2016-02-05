@@ -1,5 +1,5 @@
 #import "IAMoviesCollection.h"
-#import "IAMovie.h"
+#import "IAMovieCollection.h"
 
 @implementation IAMoviesCollection
 
@@ -12,6 +12,6 @@
 }
 
 +(NSValueTransformer *) moviesJSONTransformer {
-    return [MTLJSONAdapter arrayTransformerWithModelClass:IAMovie.class];
+    return [MTLJSONAdapter arrayTransformerWithModelClass:IAMovieCollection.class];
 }
 @end

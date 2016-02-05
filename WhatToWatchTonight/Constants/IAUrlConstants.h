@@ -9,4 +9,5 @@ extern NSString * const IADefaultUrl;
 extern NSString * const IAUrlTopRatedMovies;
 extern NSString * const IAUrlNowPlayingMovies;
 extern NSString * const IAUrlUpcomingMovies;
+extern NSString * const IAImageBaseUrl;
 @end

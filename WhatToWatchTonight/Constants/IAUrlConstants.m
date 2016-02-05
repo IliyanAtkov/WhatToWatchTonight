@@ -9,4 +9,5 @@ NSString * const IADefaultUrl = @"http://api.themoviedb.org/3/";
 NSString * const IAUrlTopRatedMovies = @"movie/top_rated";
 NSString * const IAUrlNowPlayingMovies = @"movie/now_playing";
 NSString * const IAUrlUpcomingMovies = @"movie/upcoming";
+NSString * const IAImageBaseUrl = @"http://image.tmdb.org/t/p/";
 @end

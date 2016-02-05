@@ -22,13 +22,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpn-sX-Smt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12459" y="1634"/>
+            <point key="canvasLocation" x="12470" y="1634"/>
         </scene>
-        <!--Movies View Controller-->
+        <!--MOVIES-->
         <scene sceneID="H29-kn-tij">
             <objects>
                 <tableViewController id="tBf-no-cc6" customClass="IAMoviesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V1t-Sh-soj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="V1t-Sh-soj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,11 +37,11 @@
                             <outlet property="delegate" destination="tBf-no-cc6" id="bym-3r-aUX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DhQ-oU-cTF"/>
+                    <navigationItem key="navigationItem" title="MOVIES" id="DhQ-oU-cTF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqr-Ob-lrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13088" y="1634"/>
+            <point key="canvasLocation" x="13185" y="1634"/>
         </scene>
         <!--POPULAR TV-->
         <scene sceneID="idi-gR-KI3">
@@ -88,8 +88,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tME-AX-pon" kind="relationship" relationship="viewControllers" id="gFL-rJ-ofU"/>
-                        <segue destination="PT6-tp-WSX" kind="relationship" relationship="viewControllers" id="q8V-AR-ZqF"/>
+                        <segue destination="tME-AX-pon" kind="relationship" relationship="viewControllers" id="Zl6-R5-kp3"/>
+                        <segue destination="PT6-tp-WSX" kind="relationship" relationship="viewControllers" id="3Ms-8N-Kd2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5X-er-eoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
