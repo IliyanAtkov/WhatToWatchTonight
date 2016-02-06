@@ -8,6 +8,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "IAAllMoviesByTypeViewController.h"
 #import "IAAppDelegate.h"
+#import "IASingleMovieViewController.h"
 
 @interface IAMoviesViewController ()
 @property NSMutableArray *allMovies;
@@ -35,15 +36,50 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
 }
 
-
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewDidDisappear:animated];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.allMovies.count;
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellIdentifier = @"allMoviesTableViewCell";
+    IAAllMoviesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    if(!cell) {
+        cell = [[IAAllMoviesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    cell.delegate = self;
+    
+    IAMoviesCollection *moviesByType = self.allMovies[indexPath.row];
+    moviesByType.mainTitle = [self setMainTitleWithRow:indexPath.row];
+    
+    cell.mainTitle.title = moviesByType.mainTitle;
+    
+    NSArray *movies = moviesByType.movies;
+    
+    NSArray *cellImages =[NSArray arrayWithObjects:cell.firstImage, cell.secondImage, cell.thirdImage, cell.fourthImage, cell.fifthImage,nil];
+    
+    [self attachGestureRecognizersToImages:cellImages];
+    [self setImages:cellImages andIndexPathRow:indexPath.row];
+    
+    
+    cell.firstLabel.text = [movies[0] title];
+    cell.secondLabel.text = [movies[1] title];
+    cell.thirdLabel.text = [movies[2] title];
+    cell.fourthLabel.text = [movies[3] title];
+    cell.fifthLabel.text = [movies[4] title];
+    
+    return cell;
+    
 }
 
 -(void) loadMovies {
@@ -60,13 +96,8 @@
     [self getWithUrl:IAUrlUpcomingMovies];
 }
 
--(BOOL) isDataLoaded {
-    if (self.allMovies.count == _itemsPerPage) {
-        return YES;
-    }
-    
-    return false;
-}
+
+
 -(void)seeAllWasTapped:(IAAllMoviesTableViewCell *)cell {
     [self performSegueWithIdentifier:@"allMoviesByTypeScene" sender:cell];
 }
@@ -79,6 +110,10 @@
         vc.title = [self.allMovies[indexPath.row] mainTitle];
         vc.moviesTypeUrl = [self.allMovies[indexPath.row] typeName];
         
+    }
+    else if([[segue identifier] isEqual:@"showSingleMovieScene"]) {
+        IASingleMovieViewController *vc = [segue destinationViewController];
+        vc.movieID = [sender tag];
     }
 }
 
@@ -93,13 +128,16 @@
         }
         if([self isDataLoaded] == YES || error != nil)
         {
-            IAAppDelegate *delegate = (IAAppDelegate *)[UIApplication sharedApplication].delegate;
-            
-            UIAlertController *alert = [delegate showErrorWithTitle:@"ERROR" andMessage:[error localizedDescription]];
             dispatch_async(dispatch_get_main_queue(), ^{
+                IAAppDelegate *delegate = (IAAppDelegate *)[UIApplication sharedApplication].delegate;
+                
+                UIAlertController *alert = [delegate showErrorWithTitle:@"ERROR" andMessage:[error localizedDescription]];
                 [MBProgressHUD hideHUDForView:[weakSelf view] animated:YES];
                 if (error != nil) {
-                    [weakSelf presentViewController:alert animated:YES completion:nil];
+                    if (![weakSelf presentedViewController])
+                    {
+                        [weakSelf presentViewController:alert animated:YES completion:nil];
+                    }
                 }
                 else {
                     [[weakSelf tableView] reloadData];
@@ -109,62 +147,74 @@
     }];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = @"allMoviesTableViewCell";
-    UIImage *defaultImage = [UIImage imageNamed:@"noImage"];
-    IAAllMoviesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    if(!cell) {
-        cell = [[IAAllMoviesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    cell.delegate = self;
-    
-    IAMoviesCollection *moviesByType = self.allMovies[indexPath.row];
-    if(indexPath.row == 0) {
-        moviesByType.mainTitle = @"Popular movies";
-    }
-    else if(indexPath.row == 1) {
-        moviesByType.mainTitle = @"Now playing movies";
-    }
-    else if(indexPath.row == 2) {
-        moviesByType.mainTitle = @"Top rated movies";
-    }
-    else if(indexPath.row == 3) {
-        moviesByType.mainTitle = @"Upcoming movies";
-    }
-    
-    cell.mainTitle.title = moviesByType.mainTitle;
-    
-    NSArray *movies = moviesByType.movies;
-    NSURL *firstImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[0] urlImage]]];
-    NSURL *secondImageUrl =[NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[1] urlImage]]];
-    NSURL *thirdImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[2] urlImage]]];;
-    NSURL *fourthImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[3] urlImage]]];
-    NSURL *fifthImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[4] urlImage]]];
-    
-    [cell.firstImage sd_setImageWithURL:firstImageUrl
-                       placeholderImage:defaultImage];
-    [cell.secondImage sd_setImageWithURL:secondImageUrl
-                        placeholderImage:defaultImage];
-    
-    [cell.thirdImage sd_setImageWithURL:thirdImageUrl
-                       placeholderImage:defaultImage];
-    
-    [cell.fourthImage sd_setImageWithURL:fourthImageUrl
-                        placeholderImage:defaultImage];
-    
-    [cell.fifthImage sd_setImageWithURL:fifthImageUrl
-                       placeholderImage:defaultImage];
-    
-    cell.firstLabel.text = [movies[0] title];
-    cell.secondLabel.text = [movies[1] title];
-    cell.thirdLabel.text = [movies[2] title];
-    cell.fourthLabel.text = [movies[3] title];
-    cell.fifthLabel.text = [movies[4] title];
-    
-    return cell;
-    
+-(void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
+    UIImageView *cell = (UIImageView*)gestureRecognizer.view;
+    [self performSegueWithIdentifier:@"showSingleMovieScene" sender:cell];
 }
 
+
+-(void)attachGestureRecognizersToImages: (NSArray *) images {
+    for (int i = 0; i < images.count; i++) {
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
+        tap.cancelsTouchesInView = YES;
+        tap.numberOfTapsRequired = 1;
+        
+        [images[i] addGestureRecognizer:tap];
+    }
+}
+
+-(void) setImages: (NSArray *) images andIndexPathRow: (NSInteger)row{
+    UIImage *defaultImage = [UIImage imageNamed:@"noImage"];
+    IAMoviesCollection *moviesByType = self.allMovies[row];
+    NSArray *movies = moviesByType.movies;
+    NSArray *urls = [self getImageUrls:movies];
+    
+    for (int i = 0; i < images.count; i++) {
+        UIImageView *currentImage = images[i];
+        
+        currentImage.tag = [[movies[i] movieId]integerValue];
+        [currentImage sd_setImageWithURL:urls[i]
+                        placeholderImage:defaultImage];
+    }
+}
+
+-(BOOL) isDataLoaded {
+    if (self.allMovies.count == _itemsPerPage) {
+        return YES;
+    }
+    
+    return false;
+}
+
+-(NSArray *) getImageUrls: (NSArray *) movies {
+    NSMutableArray *urls = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 5; i++) {
+        IAMovieCollection *movie = movies[i];
+        if (movie.urlImage != nil) {
+            [urls addObject:[NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:movie.urlImage]]];
+        }
+        else {
+            [urls addObject:@"InvalidUrl"];
+        }
+    }
+    
+    return urls;
+}
+
+-(NSString *) setMainTitleWithRow: (NSInteger) row {
+    if(row == 0) {
+        return @"Popular movies";
+    }
+    else if(row == 1) {
+        return @"Now playing movies";
+    }
+    else if(row == 2) {
+        return @"Top rated movies";
+    }
+    else {
+        return @"Upcoming movies";
+    }
+}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

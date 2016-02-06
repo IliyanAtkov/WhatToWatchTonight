@@ -7,11 +7,15 @@
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"movieId": @"id",
-             @"title": @"original_title",
+             @"title": @"title",
              @"overview": @"overview",
              @"budget" : @"budget",
              @"releaseDate" : @"release_date",
-             @"genres": @"genres"
+             @"genres": @"genres",
+             @"urlImage" : @"poster_path",
+             @"runtime" : @"runtime",
+             @"revenue" : @"revenue",
+             @"voteAverage" : @"vote_average"
              };
 }
 

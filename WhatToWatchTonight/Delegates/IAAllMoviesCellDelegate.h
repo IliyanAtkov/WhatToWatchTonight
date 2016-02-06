@@ -3,4 +3,5 @@
 
 @protocol IAAllMoviesCellDelegate <NSObject>
 -(void) seeAllWasTapped: (IAAllMoviesTableViewCell*) cell;
+-(void) imageWasTapped: (IAAllMoviesTableViewCell*) cell;
 @end

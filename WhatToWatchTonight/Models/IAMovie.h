@@ -10,4 +10,8 @@
 @property (copy, nonatomic, readonly) NSNumber *budget;
 @property (copy, nonatomic, readonly) NSDate *releaseDate;
 @property (copy, nonatomic, readonly) NSArray *genres;
+@property (copy, nonatomic, readonly) NSString *urlImage;
+@property (copy, nonatomic, readonly) NSNumber *runtime;
+@property (copy, nonatomic, readonly) NSNumber *revenue;
+@property (copy, nonatomic, readonly) NSNumber *voteAverage;
 @end

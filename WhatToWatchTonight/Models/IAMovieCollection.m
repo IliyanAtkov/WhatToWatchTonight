@@ -5,7 +5,7 @@
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
              @"movieId": @"id",
-             @"title": @"original_title",
+             @"title": @"title",
              @"urlImage" : @"poster_path"
              };
 }

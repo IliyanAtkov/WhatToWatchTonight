@@ -7,15 +7,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="allMoviesTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="221" id="YHn-Ix-Af3" customClass="IAAllMoviesTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="391" height="212"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="allMoviesTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="220" id="YHn-Ix-Af3" customClass="IAAllMoviesTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="211"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YHn-Ix-Af3" id="oaW-8T-SzT">
-                <rect key="frame" x="0.0" y="0.0" width="391" height="211"/>
+                <rect key="frame" x="0.0" y="0.0" width="417" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nh6-Bx-AcM">
-                        <rect key="frame" x="0.0" y="0.0" width="391" height="44"/>
+                        <rect key="frame" x="-1" y="0.0" width="418" height="44"/>
+                        <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <items>
                             <navigationItem title="Title" id="aGP-NK-lRu">
                                 <barButtonItem key="rightBarButtonItem" title="See All &gt;" id="Vyo-5h-99q">
@@ -29,86 +30,89 @@
                             <rect key="frame" x="0.0" y="0.0" width="753" height="44"/>
                         </variation>
                     </navigationBar>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHO-CE-tt1">
-                        <rect key="frame" x="8" y="60" width="70" height="98"/>
-                        <variation key="heightClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="5" y="60" width="130" height="98"/>
-                        </variation>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhu-FH-DAk">
-                        <rect key="frame" x="86" y="60" width="70" height="98"/>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhu-FH-DAk">
+                        <rect key="frame" x="89" y="60" width="70" height="105"/>
+                        <gestureRecognizers/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="158" y="60" width="130" height="98"/>
                         </variation>
                     </imageView>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-Xu-Beq">
+                        <rect key="frame" x="256" y="60" width="70" height="105"/>
+                        <gestureRecognizers/>
+                        <variation key="heightClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="464" y="60" width="130" height="98"/>
+                        </variation>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdO-8Y-0kI">
-                        <rect key="frame" x="6" y="166" width="75" height="37"/>
+                        <rect key="frame" x="8" y="158" width="70" height="44"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="26" y="166" width="99" height="37"/>
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeB-z3-0sb">
-                        <rect key="frame" x="84" y="166" width="75" height="37"/>
+                        <rect key="frame" x="89" y="158" width="70" height="44"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="180" y="166" width="99" height="37"/>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PF-dd-e6w">
-                        <rect key="frame" x="164" y="60" width="70" height="98"/>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4PF-dd-e6w">
+                        <rect key="frame" x="173" y="60" width="70" height="105"/>
+                        <gestureRecognizers/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="311" y="60" width="130" height="98"/>
                         </variation>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUU-9L-v1T">
-                        <rect key="frame" x="320" y="60" width="70" height="98"/>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUU-9L-v1T">
+                        <rect key="frame" x="339" y="60" width="70" height="105"/>
+                        <gestureRecognizers/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="621" y="60" width="130" height="98"/>
                         </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhI-O1-vK2">
-                        <rect key="frame" x="325" y="166" width="61" height="37"/>
+                        <rect key="frame" x="339" y="158" width="70" height="44"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="637" y="166" width="99" height="37"/>
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reO-k8-5RJ">
-                        <rect key="frame" x="247" y="166" width="61" height="37"/>
+                        <rect key="frame" x="261" y="158" width="61" height="44"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="486" y="166" width="99" height="37"/>
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvI-0m-cw9">
-                        <rect key="frame" x="162" y="166" width="75" height="37"/>
+                        <rect key="frame" x="173" y="158" width="70" height="44"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="334" y="166" width="99" height="37"/>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-Xu-Beq">
-                        <rect key="frame" x="242" y="60" width="70" height="98"/>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfP-9U-UcU">
+                        <rect key="frame" x="8" y="60" width="70" height="105"/>
+                        <gestureRecognizers/>
                         <variation key="heightClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="464" y="60" width="130" height="98"/>
+                            <rect key="frame" x="158" y="60" width="130" height="98"/>
                         </variation>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
+            <gestureRecognizers/>
             <connections>
                 <outlet property="fifthImage" destination="HUU-9L-v1T" id="55F-XD-2R7"/>
                 <outlet property="fifthLabel" destination="VhI-O1-vK2" id="wch-UD-xZ9"/>
-                <outlet property="firstImage" destination="cHO-CE-tt1" id="lrI-6V-VfL"/>
+                <outlet property="firstImage" destination="gfP-9U-UcU" id="lHr-La-B4i"/>
                 <outlet property="firstLabel" destination="LdO-8Y-0kI" id="WBt-wa-gZC"/>
                 <outlet property="fourthImage" destination="kjN-Xu-Beq" id="usW-YN-Vio"/>
                 <outlet property="fourthLabel" destination="reO-k8-5RJ" id="NCL-HT-Kcf"/>
@@ -118,7 +122,7 @@
                 <outlet property="thirdImage" destination="4PF-dd-e6w" id="CtR-Ny-E3l"/>
                 <outlet property="thirdLabel" destination="pvI-0m-cw9" id="LWb-es-BXh"/>
             </connections>
-            <point key="canvasLocation" x="1090" y="352.5"/>
+            <point key="canvasLocation" x="1102.5" y="352.5"/>
         </tableViewCell>
     </objects>
 </document>

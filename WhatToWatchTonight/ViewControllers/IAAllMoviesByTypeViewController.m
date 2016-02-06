@@ -21,11 +21,11 @@
     [super viewDidLoad];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"IAAllMoviesByTypeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"allMoviesByTypeViewCell"];
+    
     _currentPage = 1;
     _client = [[IAMovieDbClient alloc] init];
 
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.movies.count;
@@ -48,11 +48,13 @@
             IAAppDelegate *delegate = (IAAppDelegate *)[UIApplication sharedApplication].delegate;
             
             UIAlertController *alert = [delegate showErrorWithTitle:@"ERROR" andMessage:[error localizedDescription]];
-            
-            [weakSelf presentViewController:alert animated:YES completion:nil];
-            
+            [MBProgressHUD hideHUDForView:[weakSelf view] animated:YES];
+            if (![weakSelf presentedViewController])
+            {
+                [weakSelf presentViewController:alert animated:YES completion:nil];
+            }
         }
-        [MBProgressHUD hideHUDForView:[weakSelf view] animated:YES];
+        
         [[weakSelf collectionView] reloadData];
     }];
 }
