@@ -11,4 +11,5 @@ extern NSString * const IAUrlNowPlayingMovies;
 extern NSString * const IAUrlUpcomingMovies;
 extern NSString * const IAImageBaseUrl;
 extern NSString * const IAImageSmallBaseUrl;
+extern NSString * const IAPageName;
 @end

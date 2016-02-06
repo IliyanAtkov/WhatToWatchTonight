@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface IAAllMoviesByTypeViewController : UITableViewController
-@property NSArray *movies;
+@interface IAAllMoviesByTypeViewController : UICollectionViewController
+@property NSMutableArray *movies;
+@property NSString *moviesTypeUrl;
 @end

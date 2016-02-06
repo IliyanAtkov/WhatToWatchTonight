@@ -11,4 +11,5 @@ NSString * const IAUrlNowPlayingMovies = @"movie/now_playing";
 NSString * const IAUrlUpcomingMovies = @"movie/upcoming";
 NSString * const IAImageBaseUrl = @"http://image.tmdb.org/t/p/";
 NSString * const IAImageSmallBaseUrl = @"http://image.tmdb.org/t/p/w92";
+NSString * const IAPageName = @"page";
 @end

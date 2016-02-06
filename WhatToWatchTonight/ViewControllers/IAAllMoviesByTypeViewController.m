@@ -1,90 +1,86 @@
 #import "IAAllMoviesByTypeViewController.h"
+#import "IAAllMoviesByTypeCollectionViewCell.h"
+#import "IAMovieCollection.h"
+#import "IAUrlConstants.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "IAMovieDbClient.h"
+#import "IAAppDelegate.h"
+#import "MBProgressHUD.h"
 
 @interface IAAllMoviesByTypeViewController ()
 
 @end
 
 @implementation IAAllMoviesByTypeViewController
-
+{
+    IAMovieDbClient *_client;
+    NSDictionary *_parameters;
+    NSInteger _currentPage;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self.collectionView registerNib:[UINib nibWithNibName:@"IAAllMoviesByTypeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"allMoviesByTypeViewCell"];
+    _currentPage = 1;
+    _client = [[IAMovieDbClient alloc] init];
+
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.movies.count;
+}
+
+-(void)loadMoreMovies {
+    __weak id weakSelf = self;
+    _currentPage += 1;
+    _parameters = @{
+                    IAApiKeyName : IAApiKeyValue,
+                    IAPageName : [NSNumber numberWithInteger:_currentPage]
+                    };
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [_client GET:self.moviesTypeUrl parameters:_parameters completion:^(OVCResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil) {
+            id _moreMovies = response.result;
+            [[weakSelf movies] addObjectsFromArray:[_moreMovies movies]];
+        }
+        else {
+            IAAppDelegate *delegate = (IAAppDelegate *)[UIApplication sharedApplication].delegate;
+            
+            UIAlertController *alert = [delegate showErrorWithTitle:@"ERROR" andMessage:[error localizedDescription]];
+            
+            [weakSelf presentViewController:alert animated:YES completion:nil];
+            
+        }
+        [MBProgressHUD hideHUDForView:[weakSelf view] animated:YES];
+        [[weakSelf collectionView] reloadData];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+     
+     - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+         NSString *cellIdentifier = @"allMoviesByTypeViewCell";
+         UIImage *defaultImage = [UIImage imageNamed:@"noImage"];
+         IAAllMoviesByTypeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+         if(!cell) {
+             cell = [[IAAllMoviesByTypeCollectionViewCell alloc] init];
+         }
+         
+         IAMovieCollection *movie = self.movies[indexPath.row];
+         if (movie.urlImage != nil) {
+             NSURL *firstImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:movie.urlImage]];
+             [cell.image sd_setImageWithURL:firstImageUrl
+                           placeholderImage:defaultImage];
+         }
+         else {
+             cell.image.image = defaultImage;
+         }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-@end
+         cell.label.text = movie.title;
+         
+         if (indexPath.row == [self.movies count] - 1) {
+             [self loadMoreMovies];
+         }
+         return cell;
+     }
+     @end

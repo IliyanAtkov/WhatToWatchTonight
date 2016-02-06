@@ -4,6 +4,7 @@
 @interface IAMoviesCollection : MTLModel <MTLJSONSerializing>
 
 @property (copy, nonatomic, readonly) NSNumber *currentPage;
+@property (copy, nonatomic, readwrite) NSString *typeName;
 @property (copy, nonatomic, readonly) NSArray *movies;
 @property (copy, nonatomic, readwrite) NSString *mainTitle;
 @end

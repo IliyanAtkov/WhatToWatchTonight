@@ -41,12 +41,6 @@
                             <rect key="frame" x="158" y="60" width="130" height="98"/>
                         </variation>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-Xu-Beq">
-                        <rect key="frame" x="242" y="60" width="70" height="98"/>
-                        <variation key="heightClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="464" y="60" width="130" height="98"/>
-                        </variation>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdO-8Y-0kI">
                         <rect key="frame" x="6" y="166" width="75" height="37"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -103,6 +97,12 @@
                             <rect key="frame" x="334" y="166" width="99" height="37"/>
                         </variation>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjN-Xu-Beq">
+                        <rect key="frame" x="242" y="60" width="70" height="98"/>
+                        <variation key="heightClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="464" y="60" width="130" height="98"/>
+                        </variation>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
