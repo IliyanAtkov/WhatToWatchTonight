@@ -9,6 +9,6 @@ target 'WhatToWatchTonight' do
 
 pod 'Overcoat', '~> 4.0.0-beta.1'
 pod 'MBProgressHUD', '~> 0.9.2'
-
+pod 'SDWebImage', '~>3.7'
 end
 

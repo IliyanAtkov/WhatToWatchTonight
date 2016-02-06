@@ -5,6 +5,7 @@
 #import "MBProgressHUD.h"
 #import "IATableViewCell.h"
 #import "IAMovieCollection.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface IAMoviesViewController ()
 @end
@@ -15,6 +16,7 @@
     NSMutableArray *_allMovies;
     NSDictionary *_parameters;
     NSInteger _itemsPerPage;
+    NSString *_imagesUrl;
 }
 
 - (void)viewDidLoad {
@@ -85,22 +87,6 @@
         if (error == nil) {
             id _collection = response.result;
             
-            for (int i = 0; i < _itemsPerPage; i++) {
-                NSArray *movies = [_collection movies];
-                IAMovieCollection *movie = movies[i];
-                NSString *_url = [IAImageBaseUrl stringByAppendingString:[NSString stringWithFormat:@"w92%@", movie.urlImage]];
-                NSURL *imageURL = [NSURL URLWithString:_url];
-                
-                __weak IAMovieCollection *weakMovie = movie;
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        weakMovie.image = [UIImage imageWithData:imageData];
-                    });
-                });
-                
-            }
             
             [_allMovies  addObject:_collection];
         }
@@ -133,13 +119,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier = @"tableViewCell";
- 
+    UIImage *defaultImage = [UIImage imageNamed:@"defaultImage"];
     IATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if(!cell) {
         cell = [[IATableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    if (_allMovies.count != 0) {
-        
         if(indexPath.row == 0) {
             cell.mainTitle.title = @"Popular movies";
         }
@@ -153,18 +137,34 @@
             cell.mainTitle.title = @"Upcoming movies";
         }
         
-        NSArray *movies = [_allMovies[indexPath.row] movies];
-
         
+        NSArray *movies = [_allMovies[indexPath.row] movies];
+        NSURL *firstImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[0] urlImage]]];
+        NSURL *secondImageUrl =[NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[1] urlImage]]];
+        NSURL *thirdImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[2] urlImage]]];;
+        NSURL *fourthImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[3] urlImage]]];
+        NSURL *fifthImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:[movies[4] urlImage]]];
+        
+        [cell.firstImage sd_setImageWithURL:firstImageUrl
+                          placeholderImage:[UIImage imageWithContentsOfFile:@"defaultImage"]];
+        [cell.secondImage sd_setImageWithURL:secondImageUrl
+                            placeholderImage:defaultImage];
+
+        [cell.thirdImage sd_setImageWithURL:thirdImageUrl
+                           placeholderImage:defaultImage];
+
+        [cell.fourthImage sd_setImageWithURL:fourthImageUrl
+                            placeholderImage:defaultImage];
+    
+        [cell.fifthImage sd_setImageWithURL:fifthImageUrl
+                        placeholderImage:defaultImage];
+    
+
         cell.firstLabel.text = [movies[0] title];
         cell.secondLabel.text = [movies[1] title];
         cell.thirdLabel.text = [movies[2] title];
         cell.fourthLabel.text = [movies[3] title];
-        cell.firstImage.image = [movies[0] image];
-        cell.secondImage.image = [movies[1] image];
-        cell.thirdImage.image = [movies[2] image];
-        cell.fourthImage.image = [movies[3] image];
-    }
+        cell.fifthLabel.text = [movies[4] title];
     
     return cell;
     

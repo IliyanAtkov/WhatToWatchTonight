@@ -17,31 +17,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tBf-no-cc6" kind="relationship" relationship="rootViewController" id="dT2-AW-emI"/>
+                        <segue destination="OKZ-NS-Hwk" kind="relationship" relationship="rootViewController" id="yIL-5n-w6Y"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kpn-sX-Smt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12470" y="1634"/>
         </scene>
-        <!--MOVIES-->
-        <scene sceneID="H29-kn-tij">
+        <!--Movies View Controller-->
+        <scene sceneID="VA9-hZ-tMO">
             <objects>
-                <tableViewController id="tBf-no-cc6" customClass="IAMoviesViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="V1t-Sh-soj">
+                <tableViewController id="OKZ-NS-Hwk" customClass="IAMoviesViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="44" sectionFooterHeight="44" id="cgP-dO-eEz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
-                            <outlet property="dataSource" destination="tBf-no-cc6" id="deV-Kw-ZZN"/>
-                            <outlet property="delegate" destination="tBf-no-cc6" id="bym-3r-aUX"/>
+                            <outlet property="dataSource" destination="OKZ-NS-Hwk" id="ScS-Sq-BdI"/>
+                            <outlet property="delegate" destination="OKZ-NS-Hwk" id="d00-Fw-IPf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MOVIES" id="DhQ-oU-cTF"/>
+                    <navigationItem key="navigationItem" id="3ia-yz-VJU"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dqr-Ob-lrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="htl-XC-KTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13185" y="1634"/>
+            <point key="canvasLocation" x="13133" y="1634"/>
         </scene>
         <!--POPULAR TV-->
         <scene sceneID="idi-gR-KI3">

@@ -10,4 +10,5 @@ extern NSString * const IAUrlTopRatedMovies;
 extern NSString * const IAUrlNowPlayingMovies;
 extern NSString * const IAUrlUpcomingMovies;
 extern NSString * const IAImageBaseUrl;
+extern NSString * const IAImageSmallBaseUrl;
 @end
