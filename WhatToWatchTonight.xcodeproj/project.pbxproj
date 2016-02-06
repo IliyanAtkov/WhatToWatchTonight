@@ -14,8 +14,8 @@
 		AB3F49BE1C5F959400F677B9 /* IAMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49BD1C5F959400F677B9 /* IAMovie.m */; };
 		AB3F49C21C5F9FC100F677B9 /* IAFormatterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49C11C5F9FC100F677B9 /* IAFormatterHelper.m */; };
 		AB3F49C61C5FA2E300F677B9 /* IAMovieDbClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F49C51C5FA2E300F677B9 /* IAMovieDbClient.m */; };
-		AB749BF71C63A5070091C4DE /* IATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB749BF61C63A5070091C4DE /* IATableViewCell.xib */; };
-		AB749BFA1C63A8B30091C4DE /* IATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB749BF91C63A8B30091C4DE /* IATableViewCell.m */; };
+		AB749BF71C63A5070091C4DE /* IAAllMoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB749BF61C63A5070091C4DE /* IAAllMoviesTableViewCell.xib */; };
+		AB749BFA1C63A8B30091C4DE /* IAAllMoviesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB749BF91C63A8B30091C4DE /* IAAllMoviesTableViewCell.m */; };
 		AB749BFD1C63B2AA0091C4DE /* IAMovieCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB749BFC1C63B2AA0091C4DE /* IAMovieCollection.m */; };
 		AB749C001C6488000091C4DE /* IAMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB749BFF1C6488000091C4DE /* IAMoviesViewController.m */; };
 		AB8F5CB11C5E90F50055E98C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8F5CB01C5E90F50055E98C /* main.m */; };
@@ -23,6 +23,7 @@
 		AB8F5CBA1C5E90F60055E98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CB81C5E90F60055E98C /* Main.storyboard */; };
 		AB8F5CBC1C5E90F60055E98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */; };
 		AB8F5CBF1C5E90F60055E98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBD1C5E90F60055E98C /* LaunchScreen.storyboard */; };
+		ABF5B4641C65E9DD00AFA657 /* IAAllMoviesByTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF5B4631C65E9DD00AFA657 /* IAAllMoviesByTypeViewController.m */; };
 		C10D92EAECDF969CD9183FED /* libPods-WhatToWatchTonight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +44,9 @@
 		AB3F49C11C5F9FC100F677B9 /* IAFormatterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAFormatterHelper.m; path = Helpers/IAFormatterHelper.m; sourceTree = "<group>"; };
 		AB3F49C41C5FA2E300F677B9 /* IAMovieDbClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMovieDbClient.h; path = Data/IAMovieDbClient.h; sourceTree = "<group>"; };
 		AB3F49C51C5FA2E300F677B9 /* IAMovieDbClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAMovieDbClient.m; path = Data/IAMovieDbClient.m; sourceTree = "<group>"; };
-		AB749BF61C63A5070091C4DE /* IATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IATableViewCell.xib; sourceTree = "<group>"; };
-		AB749BF81C63A8B30091C4DE /* IATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IATableViewCell.h; path = Views/IATableViewCell.h; sourceTree = "<group>"; };
-		AB749BF91C63A8B30091C4DE /* IATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IATableViewCell.m; path = Views/IATableViewCell.m; sourceTree = "<group>"; };
+		AB749BF61C63A5070091C4DE /* IAAllMoviesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IAAllMoviesTableViewCell.xib; sourceTree = "<group>"; };
+		AB749BF81C63A8B30091C4DE /* IAAllMoviesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAAllMoviesTableViewCell.h; path = Views/IAAllMoviesTableViewCell.h; sourceTree = "<group>"; };
+		AB749BF91C63A8B30091C4DE /* IAAllMoviesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAAllMoviesTableViewCell.m; path = Views/IAAllMoviesTableViewCell.m; sourceTree = "<group>"; };
 		AB749BFB1C63B2AA0091C4DE /* IAMovieCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMovieCollection.h; path = Models/IAMovieCollection.h; sourceTree = "<group>"; };
 		AB749BFC1C63B2AA0091C4DE /* IAMovieCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAMovieCollection.m; path = Models/IAMovieCollection.m; sourceTree = "<group>"; };
 		AB749BFE1C6488000091C4DE /* IAMoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMoviesViewController.h; path = ViewControllers/IAMoviesViewController.h; sourceTree = "<group>"; };
@@ -58,6 +59,9 @@
 		AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB8F5CBE1C5E90F60055E98C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8F5CC01C5E90F60055E98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABF5B4621C65E9DD00AFA657 /* IAAllMoviesByTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAAllMoviesByTypeViewController.h; path = ViewControllers/IAAllMoviesByTypeViewController.h; sourceTree = "<group>"; };
+		ABF5B4631C65E9DD00AFA657 /* IAAllMoviesByTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAAllMoviesByTypeViewController.m; path = ViewControllers/IAAllMoviesByTypeViewController.m; sourceTree = "<group>"; };
+		ABF5B4661C65EF2C00AFA657 /* IAAllMoviesCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAAllMoviesCellDelegate.h; path = Delegates/IAAllMoviesCellDelegate.h; sourceTree = "<group>"; };
 		F1174208E1F4607B7BC99E8F /* Pods-WhatToWatchTonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWatchTonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,8 @@
 				AB24BE5E1C636A4D007CF427 /* IAMovieViewController.m */,
 				AB749BFE1C6488000091C4DE /* IAMoviesViewController.h */,
 				AB749BFF1C6488000091C4DE /* IAMoviesViewController.m */,
+				ABF5B4621C65E9DD00AFA657 /* IAAllMoviesByTypeViewController.h */,
+				ABF5B4631C65E9DD00AFA657 /* IAAllMoviesByTypeViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -146,9 +152,9 @@
 		AB749BF51C63A4840091C4DE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB749BF61C63A5070091C4DE /* IATableViewCell.xib */,
-				AB749BF81C63A8B30091C4DE /* IATableViewCell.h */,
-				AB749BF91C63A8B30091C4DE /* IATableViewCell.m */,
+				AB749BF61C63A5070091C4DE /* IAAllMoviesTableViewCell.xib */,
+				AB749BF81C63A8B30091C4DE /* IAAllMoviesTableViewCell.h */,
+				AB749BF91C63A8B30091C4DE /* IAAllMoviesTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 		AB8F5CAE1C5E90F50055E98C /* WhatToWatchTonight */ = {
 			isa = PBXGroup;
 			children = (
+				ABF5B4651C65EECA00AFA657 /* Delegates */,
 				AB749BF51C63A4840091C4DE /* Views */,
 				AB24BE5C1C6369ED007CF427 /* ViewControllers */,
 				AB24BE581C6364A8007CF427 /* Constants */,
@@ -197,6 +204,14 @@
 				AB8F5CB01C5E90F50055E98C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABF5B4651C65EECA00AFA657 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				ABF5B4661C65EF2C00AFA657 /* IAAllMoviesCellDelegate.h */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +276,7 @@
 			files = (
 				AB8F5CBF1C5E90F60055E98C /* LaunchScreen.storyboard in Resources */,
 				AB8F5CBC1C5E90F60055E98C /* Assets.xcassets in Resources */,
-				AB749BF71C63A5070091C4DE /* IATableViewCell.xib in Resources */,
+				AB749BF71C63A5070091C4DE /* IAAllMoviesTableViewCell.xib in Resources */,
 				AB8F5CBA1C5E90F60055E98C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,8 +345,9 @@
 				AB24BE5B1C6364CE007CF427 /* IAUrlConstants.m in Sources */,
 				AB8F5CB41C5E90F50055E98C /* IAAppDelegate.m in Sources */,
 				AB24BE5F1C636A4D007CF427 /* IAMovieViewController.m in Sources */,
+				ABF5B4641C65E9DD00AFA657 /* IAAllMoviesByTypeViewController.m in Sources */,
 				AB8F5CB11C5E90F50055E98C /* main.m in Sources */,
-				AB749BFA1C63A8B30091C4DE /* IATableViewCell.m in Sources */,
+				AB749BFA1C63A8B30091C4DE /* IAAllMoviesTableViewCell.m in Sources */,
 				AB27E88D1C62379A0056D21F /* IAGenre.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
