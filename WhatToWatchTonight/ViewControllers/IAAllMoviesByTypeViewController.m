@@ -6,6 +6,7 @@
 #import "IAMovieDbClient.h"
 #import "IAAppDelegate.h"
 #import "MBProgressHUD.h"
+#import "IASingleMovieViewController.h"
 
 @interface IAAllMoviesByTypeViewController ()
 
@@ -77,7 +78,16 @@
          else {
              cell.image.image = defaultImage;
          }
-
+         
+         cell.image.tag = [movie.movieId integerValue];
+         
+         
+         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
+         tap.cancelsTouchesInView = YES;
+         tap.numberOfTapsRequired = 1;
+         
+         [cell.image addGestureRecognizer:tap];
+         
          cell.label.text = movie.title;
          
          if (indexPath.row == [self.movies count] - 1) {
@@ -85,4 +95,15 @@
          }
          return cell;
      }
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqual:@"gotoSingleMovieScene"]) {
+        IASingleMovieViewController *vc = [segue destinationViewController];
+        vc.movieID = [sender tag];
+    }
+}
+
+-(void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
+    UIImageView *cell = (UIImageView*)gestureRecognizer.view;
+    [self performSegueWithIdentifier:@"gotoSingleMovieScene" sender:cell];
+}
      @end

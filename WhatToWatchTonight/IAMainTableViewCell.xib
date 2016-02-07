@@ -7,31 +7,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="allMoviesTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="220" id="YHn-Ix-Af3" customClass="IAAllMoviesTableViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="mainTableViewCell" selectionStyle="default" indentationWidth="10" rowHeight="220" id="YHn-Ix-Af3" customClass="IAMainTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="417" height="211"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YHn-Ix-Af3" id="oaW-8T-SzT">
                 <rect key="frame" x="0.0" y="0.0" width="417" height="210"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nh6-Bx-AcM">
-                        <rect key="frame" x="-1" y="0.0" width="418" height="44"/>
-                        <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <items>
-                            <navigationItem title="Title" id="aGP-NK-lRu">
-                                <barButtonItem key="rightBarButtonItem" title="See All &gt;" id="Vyo-5h-99q">
-                                    <connections>
-                                        <action selector="seeAllBtn:" destination="YHn-Ix-Af3" id="rjh-g1-54J"/>
-                                    </connections>
-                                </barButtonItem>
-                            </navigationItem>
-                        </items>
-                        <variation key="heightClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="0.0" y="0.0" width="753" height="44"/>
-                        </variation>
-                    </navigationBar>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qhu-FH-DAk">
                         <rect key="frame" x="89" y="60" width="70" height="105"/>
+                        <gestureRecognizers/>
+                        <variation key="heightClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="158" y="60" width="130" height="98"/>
+                        </variation>
+                    </imageView>
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfP-9U-UcU">
+                        <rect key="frame" x="8" y="60" width="70" height="105"/>
                         <gestureRecognizers/>
                         <variation key="heightClass=compact" fixedFrame="YES">
                             <rect key="frame" x="158" y="60" width="130" height="98"/>
@@ -82,14 +73,6 @@
                             <rect key="frame" x="637" y="166" width="99" height="37"/>
                         </variation>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reO-k8-5RJ">
-                        <rect key="frame" x="261" y="158" width="61" height="44"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="heightClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="486" y="166" width="99" height="37"/>
-                        </variation>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvI-0m-cw9">
                         <rect key="frame" x="173" y="158" width="70" height="44"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -98,13 +81,30 @@
                             <rect key="frame" x="334" y="166" width="99" height="37"/>
                         </variation>
                     </label>
-                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfP-9U-UcU">
-                        <rect key="frame" x="8" y="60" width="70" height="105"/>
-                        <gestureRecognizers/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reO-k8-5RJ">
+                        <rect key="frame" x="261" y="158" width="61" height="44"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <nil key="highlightedColor"/>
                         <variation key="heightClass=compact" fixedFrame="YES">
-                            <rect key="frame" x="158" y="60" width="130" height="98"/>
+                            <rect key="frame" x="486" y="166" width="99" height="37"/>
                         </variation>
-                    </imageView>
+                    </label>
+                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nh6-Bx-AcM">
+                        <rect key="frame" x="-1" y="0.0" width="418" height="44"/>
+                        <color key="barTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <items>
+                            <navigationItem title="Title" id="aGP-NK-lRu">
+                                <barButtonItem key="rightBarButtonItem" title="See All &gt;" id="Vyo-5h-99q">
+                                    <connections>
+                                        <action selector="seeAllBtn:" destination="YHn-Ix-Af3" id="rjh-g1-54J"/>
+                                    </connections>
+                                </barButtonItem>
+                            </navigationItem>
+                        </items>
+                        <variation key="heightClass=compact" fixedFrame="YES">
+                            <rect key="frame" x="0.0" y="0.0" width="753" height="44"/>
+                        </variation>
+                    </navigationBar>
                 </subviews>
                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>

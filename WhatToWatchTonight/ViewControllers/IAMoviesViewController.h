@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "IAAllMoviesCellDelegate.h"
+#import "IAMainTableCellDelegate.h"
 
-@interface IAMoviesViewController : UITableViewController <IAAllMoviesCellDelegate>
+@interface IAMoviesViewController : UITableViewController <IAMainTableCellDelegate>
 
 
 @end

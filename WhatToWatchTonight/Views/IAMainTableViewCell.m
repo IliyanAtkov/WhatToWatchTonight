@@ -1,6 +1,6 @@
-#import "IAAllMoviesTableViewCell.h"
+#import "IAMainTableViewCell.h"
 
-@implementation IAAllMoviesTableViewCell
+@implementation IAMainTableViewCell
 - (IBAction)seeAllBtn:(id)sender {
     [self.delegate seeAllWasTapped:self];
 }

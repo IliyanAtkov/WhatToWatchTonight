@@ -3,7 +3,7 @@
 #import "IAUrlConstants.h"
 #import "IAMoviesCollection.h"
 #import "MBProgressHUD.h"
-#import "IAAllMoviesTableViewCell.h"
+#import "IAMainTableViewCell.h"
 #import "IAMovieCollection.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "IAAllMoviesByTypeViewController.h"
@@ -25,8 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"IAAllMoviesTableViewCell" bundle:nil]
-         forCellReuseIdentifier:@"allMoviesTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"IAMainTableViewCell" bundle:nil]
+         forCellReuseIdentifier:@"mainTableViewCell"];
     
     self.tableView.dataSource = self;
     
@@ -52,10 +52,10 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellIdentifier = @"allMoviesTableViewCell";
-    IAAllMoviesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    NSString *cellIdentifier = @"mainTableViewCell";
+    IAMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     if(!cell) {
-        cell = [[IAAllMoviesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[IAMainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.delegate = self;
     
@@ -98,7 +98,7 @@
 
 
 
--(void)seeAllWasTapped:(IAAllMoviesTableViewCell *)cell {
+-(void)seeAllWasTapped:(IAMainTableViewCell *)cell {
     [self performSegueWithIdentifier:@"allMoviesByTypeScene" sender:cell];
 }
 
@@ -215,48 +215,4 @@
         return @"Upcoming movies";
     }
 }
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 @end

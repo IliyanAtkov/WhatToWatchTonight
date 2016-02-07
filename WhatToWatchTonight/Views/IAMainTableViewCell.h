@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "IAAllMoviesCellDelegate.h"
+#import "IAMainTableCellDelegate.h"
 
-@interface IAAllMoviesTableViewCell : UITableViewCell
+@interface IAMainTableViewCell : UITableViewCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
-@property (weak, nonatomic) id<IAAllMoviesCellDelegate> delegate;
+@property (weak, nonatomic) id<IAMainTableCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *fifthLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *fifthImage;
 @property (weak, nonatomic) IBOutlet UIImageView *firstImage;

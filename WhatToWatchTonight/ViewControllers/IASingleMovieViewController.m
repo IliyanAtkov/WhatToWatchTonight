@@ -68,15 +68,6 @@
     self.revenue.text = [_movie.revenue stringValue];
     self.voteAverage.text = [_movie.voteAverage stringValue];
     self.overview.text = _movie.overview;
-    CGRect titleLabelBounds = self.overview.bounds;
-    titleLabelBounds.size.height = CGFLOAT_MAX;
-    // Change limitedToNumberOfLines to your preferred limit (0 for no limit)
-    CGRect minimumTextRect = [self.overview textRectForBounds:titleLabelBounds limitedToNumberOfLines:0];
-    
-    CGFloat titleLabelHeightDelta = minimumTextRect.size.height - self.overview.frame.size.height;
-    CGRect titleFrame = self.overview.frame;
-    titleFrame.size.height += titleLabelHeightDelta;
-    self.overview.frame = titleFrame;
 }
 -(NSString *) appendGenres {
     NSMutableString *genres = [[NSMutableString alloc] init];
