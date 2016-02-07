@@ -2,6 +2,8 @@
 #import "IAMovie.h"
 #import "IAUrlConstants.h"
 #import "IAMoviesCollection.h"
+#import "IATvsCollection.h"
+#import "IATv.h"
 
 @implementation IAMovieDbClient
 -(instancetype)init {
@@ -16,7 +18,12 @@
              IAUrlPopularMovies: [IAMoviesCollection class],
              IAUrlTopRatedMovies: [IAMoviesCollection class],
              IAUrlNowPlayingMovies: [IAMoviesCollection class],
-             IAUrlUpcomingMovies: [IAMoviesCollection class]
+             IAUrlUpcomingMovies: [IAMoviesCollection class],
+             @"tv/#": [IATv class],
+             IAUrlOnTheAirTvs: [IATvsCollection class],
+             IAUrlAiringTodayTvs: [IATvsCollection class],
+             IAUrlPopularTvs: [IATvsCollection class],
+             IAUrlTopRatedTvs: [IATvsCollection class]
              };
 }
 @end

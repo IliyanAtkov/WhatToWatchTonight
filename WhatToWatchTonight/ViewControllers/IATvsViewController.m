@@ -1,21 +1,21 @@
-#import "IAMoviesViewController.h"
+#import "IATvsViewController.h"
 #import "IAMovieDbClient.h"
-#import "IAUrlConstants.h"
-#import "IAMoviesCollection.h"
-#import "MBProgressHUD.h"
 #import "IAMainTableViewCell.h"
-#import "IAMovieCollection.h"
+#import "IATvCollection.h"
+#import "IAUrlConstants.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "IAAllMoviesByTypeViewController.h"
+#import "MBProgressHUD.h"
+#import "IASingleTvViewController.h"
+#import "IAAllTvsByTypeViewController.h"
 #import "IAAppDelegate.h"
-#import "IASingleMovieViewController.h"
+#import "IATvsCollection.h"
 #import "IAUIConstants.h"
 
-@interface IAMoviesViewController ()
-@property NSMutableArray *allMovies;
+@interface IATvsViewController ()
+@property NSMutableArray *allTvs;
 @end
 
-@implementation IAMoviesViewController
+@implementation IATvsViewController
 {
     IAMovieDbClient *_client;
     NSDictionary *_parameters;
@@ -25,15 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.tableView registerNib:[UINib nibWithNibName:IAMainTableViewCellName bundle:nil]
          forCellReuseIdentifier:IAMainTableViewCellIdentifier];
     
     self.tableView.dataSource = self;
-    
+    [self loadAllTvs];
     _itemsPerPage = 4;
-    [self loadMovies];
-    
     
 }
 
@@ -48,9 +45,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.allMovies.count;
+    return self.allTvs.count;
 }
-
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellIdentifier = IAMainTableViewCellIdentifier;
@@ -60,12 +56,12 @@
     }
     cell.delegate = self;
     
-    IAMoviesCollection *moviesByType = self.allMovies[indexPath.row];
-    moviesByType.mainTitle = [self setMainTitleWithRow:indexPath.row];
+    IATvsCollection *tvsByType = self.allTvs[indexPath.row];
+    tvsByType.mainTitle = [self setMainTitleWithRow:indexPath.row];
     
-    cell.mainTitle.title = moviesByType.mainTitle;
+    cell.mainTitle.title = tvsByType.mainTitle;
     
-    NSArray *movies = moviesByType.movies;
+    NSArray *tvs = tvsByType.tvs;
     
     NSArray *cellImages =[NSArray arrayWithObjects:cell.firstImage, cell.secondImage, cell.thirdImage, cell.fourthImage, cell.fifthImage,nil];
     
@@ -73,48 +69,48 @@
     [self setImages:cellImages andIndexPathRow:indexPath.row];
     
     
-    cell.firstLabel.text = [movies[0] title];
-    cell.secondLabel.text = [movies[1] title];
-    cell.thirdLabel.text = [movies[2] title];
-    cell.fourthLabel.text = [movies[3] title];
-    cell.fifthLabel.text = [movies[4] title];
+    cell.firstLabel.text = [tvs[0] title];
+    cell.secondLabel.text = [tvs[1] title];
+    cell.thirdLabel.text = [tvs[2] title];
+    cell.fourthLabel.text = [tvs[3] title];
+    cell.fifthLabel.text = [tvs[4] title];
     
     return cell;
-    
 }
 
--(void) loadMovies {
-    self.allMovies = [[NSMutableArray alloc] init];
+-(void) loadAllTvs {
+    self.allTvs = [[NSMutableArray alloc] init];
     _client = [[IAMovieDbClient alloc] init];
     _parameters = @{
                     IAApiKeyName : IAApiKeyValue
                     };
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     
-    [self getWithUrl:IAUrlPopularMovies];
-    [self getWithUrl:IAUrlNowPlayingMovies];
-    [self getWithUrl:IAUrlTopRatedMovies];
-    [self getWithUrl:IAUrlUpcomingMovies];
+    [self getWithUrl:IAUrlPopularTvs];
+    [self getWithUrl:IAUrlOnTheAirTvs];
+    [self getWithUrl:IAUrlTopRatedTvs];
+    [self getWithUrl:IAUrlAiringTodayTvs];
 }
 
 
 
 -(void)seeAllWasTapped:(IAMainTableViewCell *)cell {
-    [self performSegueWithIdentifier:IAAllMoviesByTypeScene sender:cell];
+    [self performSegueWithIdentifier:IAShowAllTvsScene sender:cell];
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier]  isEqual: IAAllMoviesByTypeScene]) {
-        IAAllMoviesByTypeViewController *vc = [segue destinationViewController];
+    if ([[segue identifier]  isEqual: IAShowAllTvsScene]) {
+        IAAllTvsByTypeViewController *vc = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        vc.movies = [NSMutableArray arrayWithArray:[self.allMovies[indexPath.row] movies]];
-        vc.title = [self.allMovies[indexPath.row] mainTitle];
-        vc.moviesTypeUrl = [self.allMovies[indexPath.row] typeName];
+        vc.tvs = [self.allTvs[indexPath.row] tvs];
+        vc.title = [self.allTvs[indexPath.row] mainTitle];
+        vc.tvsTypeUrl = [self.allTvs[indexPath.row] typeName];
         
     }
-    else if([[segue identifier] isEqual:IAShowSingleMovieScene]) {
-        IASingleMovieViewController *vc = [segue destinationViewController];
-        vc.movieID = [sender tag];
+    else if([[segue identifier] isEqual:IAShowSingleTvScene]) {
+        IASingleTvViewController *vc = [segue destinationViewController];
+        vc.tvID = [sender tag];
     }
 }
 
@@ -123,9 +119,9 @@
     __weak id weakSelf = self;
     [_client GET:url parameters:_parameters completion:^(OVCResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {
-            IAMoviesCollection *_collection = response.result;
+            IATvsCollection *_collection = response.result;
             _collection.typeName = url;
-            [[weakSelf allMovies]  addObject:_collection];
+            [[weakSelf allTvs]  addObject:_collection];
         }
         if([self isDataLoaded] == YES || error != nil)
         {
@@ -136,6 +132,7 @@
                 [MBProgressHUD hideHUDForView:[weakSelf view] animated:YES];
                 if (error != nil) {
                     [weakSelf presentViewController:alert animated:YES completion:nil];
+                    
                 }
                 else {
                     [[weakSelf tableView] reloadData];
@@ -147,7 +144,7 @@
 
 -(void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
     UIImageView *cell = (UIImageView*)gestureRecognizer.view;
-    [self performSegueWithIdentifier:IAShowSingleMovieScene sender:cell];
+    [self performSegueWithIdentifier:IAShowSingleTvScene sender:cell];
 }
 
 
@@ -163,33 +160,33 @@
 
 -(void) setImages: (NSArray *) images andIndexPathRow: (NSInteger)row{
     UIImage *defaultImage = [UIImage imageNamed:@"noImage"];
-    IAMoviesCollection *moviesByType = self.allMovies[row];
-    NSArray *movies = moviesByType.movies;
-    NSArray *urls = [self getImageUrls:movies];
+    IATvsCollection *tvsByType = self.allTvs[row];
+    NSArray *tvs = tvsByType.tvs;
+    NSArray *urls = [self getImageUrls:tvs];
     
     for (int i = 0; i < images.count; i++) {
         UIImageView *currentImage = images[i];
         
-        currentImage.tag = [[movies[i] movieId]integerValue];
+        currentImage.tag = [[tvs[i] tvId]integerValue];
         [currentImage sd_setImageWithURL:urls[i]
                         placeholderImage:defaultImage];
     }
 }
 
 -(BOOL) isDataLoaded {
-    if (self.allMovies.count == _itemsPerPage) {
+    if (self.allTvs.count == _itemsPerPage) {
         return YES;
     }
     
     return false;
 }
 
--(NSArray *) getImageUrls: (NSArray *) movies {
+-(NSArray *) getImageUrls: (NSArray *) tvs {
     NSMutableArray *urls = [[NSMutableArray alloc] init];
     for (int i = 0; i < 5; i++) {
-        IAMovieCollection *movie = movies[i];
-        if (movie.urlImage != nil) {
-            [urls addObject:[NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:movie.urlImage]]];
+        IATvCollection *tv = tvs[i];
+        if (tv.urlImage != nil) {
+            [urls addObject:[NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:tv.urlImage]]];
         }
         else {
             [urls addObject:@"InvalidUrl"];
@@ -201,16 +198,17 @@
 
 -(NSString *) setMainTitleWithRow: (NSInteger) row {
     if(row == 0) {
-        return @"Popular movies";
+        return @"Popular Tvs";
     }
     else if(row == 1) {
-        return @"Now playing movies";
+        return @"On the air Tvs";
     }
     else if(row == 2) {
-        return @"Top rated movies";
+        return @"Top rated Tvs";
     }
     else {
-        return @"Upcoming movies";
+        return @"Airing today Tvs";
     }
 }
+
 @end

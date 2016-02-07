@@ -13,4 +13,9 @@ extern NSString * const IAImageBaseUrl;
 extern NSString * const IAImageSmallBaseUrl;
 extern NSString * const IAPageName;
 extern NSString * const IAImageBigBaseUrl;
+extern NSString * const IAUrlTopRatedTvs;
+extern NSString * const IAUrlPopularTvs;
+extern NSString * const IAUrlOnTheAirTvs;
+extern NSString * const IAUrlAiringTodayTvs;
+extern NSString * const IAUrlTvById;
 @end

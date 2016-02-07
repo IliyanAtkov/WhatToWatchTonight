@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0E22D81C679C1D0005FE13 /* IATvsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E22D71C679C1D0005FE13 /* IATvsViewController.m */; };
+		AB0E22DB1C679C3F0005FE13 /* IAAllTvsByTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E22DA1C679C3F0005FE13 /* IAAllTvsByTypeViewController.m */; };
+		AB0E22DE1C679C580005FE13 /* IASingleTvViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E22DD1C679C580005FE13 /* IASingleTvViewController.m */; };
+		AB0E22E11C67A78C0005FE13 /* IATvsCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E22E01C67A78C0005FE13 /* IATvsCollection.m */; };
+		AB0E22E41C67A7A30005FE13 /* IATvCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E22E31C67A7A30005FE13 /* IATvCollection.m */; };
+		AB0E22E71C67A7B40005FE13 /* IATv.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E22E61C67A7B40005FE13 /* IATv.m */; };
+		AB0E22ED1C67CD6E0005FE13 /* IAUIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0E22EC1C67CD6E0005FE13 /* IAUIConstants.m */; };
 		AB24BE5B1C6364CE007CF427 /* IAUrlConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24BE5A1C6364CE007CF427 /* IAUrlConstants.m */; };
 		AB24BE5F1C636A4D007CF427 /* IASingleMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB24BE5E1C636A4D007CF427 /* IASingleMovieViewController.m */; };
 		AB27E88D1C62379A0056D21F /* IAGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = AB27E88C1C62379A0056D21F /* IAGenre.m */; };
@@ -23,8 +30,8 @@
 		AB8F5CBA1C5E90F60055E98C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CB81C5E90F60055E98C /* Main.storyboard */; };
 		AB8F5CBC1C5E90F60055E98C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBB1C5E90F60055E98C /* Assets.xcassets */; };
 		AB8F5CBF1C5E90F60055E98C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB8F5CBD1C5E90F60055E98C /* LaunchScreen.storyboard */; };
-		ABF5B46A1C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF5B4681C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.m */; };
-		ABF5B46B1C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF5B4691C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.xib */; };
+		ABF5B46A1C66094100AFA657 /* IAAllByTypeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF5B4681C66094100AFA657 /* IAAllByTypeCollectionViewCell.m */; };
+		ABF5B46B1C66094100AFA657 /* IAAllByTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF5B4691C66094100AFA657 /* IAAllByTypeCollectionViewCell.xib */; };
 		ABF5B46E1C660DC100AFA657 /* IAAllMoviesByTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF5B46D1C660DC100AFA657 /* IAAllMoviesByTypeViewController.m */; };
 		C10D92EAECDF969CD9183FED /* libPods-WhatToWatchTonight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */; };
 /* End PBXBuildFile section */
@@ -32,6 +39,20 @@
 /* Begin PBXFileReference section */
 		0A4DB2535695212089D0A5F1 /* Pods-WhatToWatchTonight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWatchTonight.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight.release.xcconfig"; sourceTree = "<group>"; };
 		0C634A3486ECAD4FDD9453EF /* libPods-WhatToWatchTonight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhatToWatchTonight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB0E22D61C679C1D0005FE13 /* IATvsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IATvsViewController.h; path = ViewControllers/IATvsViewController.h; sourceTree = "<group>"; };
+		AB0E22D71C679C1D0005FE13 /* IATvsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IATvsViewController.m; path = ViewControllers/IATvsViewController.m; sourceTree = "<group>"; };
+		AB0E22D91C679C3F0005FE13 /* IAAllTvsByTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAAllTvsByTypeViewController.h; path = ViewControllers/IAAllTvsByTypeViewController.h; sourceTree = "<group>"; };
+		AB0E22DA1C679C3F0005FE13 /* IAAllTvsByTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAAllTvsByTypeViewController.m; path = ViewControllers/IAAllTvsByTypeViewController.m; sourceTree = "<group>"; };
+		AB0E22DC1C679C580005FE13 /* IASingleTvViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IASingleTvViewController.h; path = ViewControllers/IASingleTvViewController.h; sourceTree = "<group>"; };
+		AB0E22DD1C679C580005FE13 /* IASingleTvViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IASingleTvViewController.m; path = ViewControllers/IASingleTvViewController.m; sourceTree = "<group>"; };
+		AB0E22DF1C67A78C0005FE13 /* IATvsCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IATvsCollection.h; path = Models/IATvsCollection.h; sourceTree = "<group>"; };
+		AB0E22E01C67A78C0005FE13 /* IATvsCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IATvsCollection.m; path = Models/IATvsCollection.m; sourceTree = "<group>"; };
+		AB0E22E21C67A7A30005FE13 /* IATvCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IATvCollection.h; path = Models/IATvCollection.h; sourceTree = "<group>"; };
+		AB0E22E31C67A7A30005FE13 /* IATvCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IATvCollection.m; path = Models/IATvCollection.m; sourceTree = "<group>"; };
+		AB0E22E51C67A7B40005FE13 /* IATv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IATv.h; path = Models/IATv.h; sourceTree = "<group>"; };
+		AB0E22E61C67A7B40005FE13 /* IATv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IATv.m; path = Models/IATv.m; sourceTree = "<group>"; };
+		AB0E22EB1C67CD6E0005FE13 /* IAUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAUIConstants.h; path = Constants/IAUIConstants.h; sourceTree = "<group>"; };
+		AB0E22EC1C67CD6E0005FE13 /* IAUIConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAUIConstants.m; path = Constants/IAUIConstants.m; sourceTree = "<group>"; };
 		AB24BE591C6364CE007CF427 /* IAUrlConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAUrlConstants.h; path = Constants/IAUrlConstants.h; sourceTree = "<group>"; };
 		AB24BE5A1C6364CE007CF427 /* IAUrlConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAUrlConstants.m; path = Constants/IAUrlConstants.m; sourceTree = "<group>"; };
 		AB24BE5D1C636A4D007CF427 /* IASingleMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IASingleMovieViewController.h; path = ViewControllers/IASingleMovieViewController.h; sourceTree = "<group>"; };
@@ -62,9 +83,9 @@
 		AB8F5CBE1C5E90F60055E98C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB8F5CC01C5E90F60055E98C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABF5B4661C65EF2C00AFA657 /* IAMainTableCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAMainTableCellDelegate.h; path = Delegates/IAMainTableCellDelegate.h; sourceTree = "<group>"; };
-		ABF5B4671C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAAllMoviesByTypeCollectionViewCell.h; path = Views/IAAllMoviesByTypeCollectionViewCell.h; sourceTree = "<group>"; };
-		ABF5B4681C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAAllMoviesByTypeCollectionViewCell.m; path = Views/IAAllMoviesByTypeCollectionViewCell.m; sourceTree = "<group>"; };
-		ABF5B4691C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IAAllMoviesByTypeCollectionViewCell.xib; path = Views/IAAllMoviesByTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABF5B4671C66094100AFA657 /* IAAllByTypeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAAllByTypeCollectionViewCell.h; path = Views/IAAllByTypeCollectionViewCell.h; sourceTree = "<group>"; };
+		ABF5B4681C66094100AFA657 /* IAAllByTypeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAAllByTypeCollectionViewCell.m; path = Views/IAAllByTypeCollectionViewCell.m; sourceTree = "<group>"; };
+		ABF5B4691C66094100AFA657 /* IAAllByTypeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IAAllByTypeCollectionViewCell.xib; path = Views/IAAllByTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		ABF5B46C1C660DC100AFA657 /* IAAllMoviesByTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAAllMoviesByTypeViewController.h; path = ViewControllers/IAAllMoviesByTypeViewController.h; sourceTree = "<group>"; };
 		ABF5B46D1C660DC100AFA657 /* IAAllMoviesByTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAAllMoviesByTypeViewController.m; path = ViewControllers/IAAllMoviesByTypeViewController.m; sourceTree = "<group>"; };
 		F1174208E1F4607B7BC99E8F /* Pods-WhatToWatchTonight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWatchTonight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhatToWatchTonight/Pods-WhatToWatchTonight.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +125,8 @@
 			children = (
 				AB24BE591C6364CE007CF427 /* IAUrlConstants.h */,
 				AB24BE5A1C6364CE007CF427 /* IAUrlConstants.m */,
+				AB0E22EB1C67CD6E0005FE13 /* IAUIConstants.h */,
+				AB0E22EC1C67CD6E0005FE13 /* IAUIConstants.m */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -117,6 +140,12 @@
 				AB749BFF1C6488000091C4DE /* IAMoviesViewController.m */,
 				ABF5B46C1C660DC100AFA657 /* IAAllMoviesByTypeViewController.h */,
 				ABF5B46D1C660DC100AFA657 /* IAAllMoviesByTypeViewController.m */,
+				AB0E22D61C679C1D0005FE13 /* IATvsViewController.h */,
+				AB0E22D71C679C1D0005FE13 /* IATvsViewController.m */,
+				AB0E22D91C679C3F0005FE13 /* IAAllTvsByTypeViewController.h */,
+				AB0E22DA1C679C3F0005FE13 /* IAAllTvsByTypeViewController.m */,
+				AB0E22DC1C679C580005FE13 /* IASingleTvViewController.h */,
+				AB0E22DD1C679C580005FE13 /* IASingleTvViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -132,6 +161,12 @@
 				AB27E88B1C62379A0056D21F /* IAGenre.h */,
 				AB749BFB1C63B2AA0091C4DE /* IAMovieCollection.h */,
 				AB749BFC1C63B2AA0091C4DE /* IAMovieCollection.m */,
+				AB0E22DF1C67A78C0005FE13 /* IATvsCollection.h */,
+				AB0E22E01C67A78C0005FE13 /* IATvsCollection.m */,
+				AB0E22E21C67A7A30005FE13 /* IATvCollection.h */,
+				AB0E22E31C67A7A30005FE13 /* IATvCollection.m */,
+				AB0E22E51C67A7B40005FE13 /* IATv.h */,
+				AB0E22E61C67A7B40005FE13 /* IATv.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -160,9 +195,9 @@
 				AB749BF61C63A5070091C4DE /* IAMainTableViewCell.xib */,
 				AB749BF81C63A8B30091C4DE /* IAMainTableViewCell.h */,
 				AB749BF91C63A8B30091C4DE /* IAMainTableViewCell.m */,
-				ABF5B4671C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.h */,
-				ABF5B4681C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.m */,
-				ABF5B4691C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.xib */,
+				ABF5B4671C66094100AFA657 /* IAAllByTypeCollectionViewCell.h */,
+				ABF5B4681C66094100AFA657 /* IAAllByTypeCollectionViewCell.m */,
+				ABF5B4691C66094100AFA657 /* IAAllByTypeCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -283,7 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB8F5CBF1C5E90F60055E98C /* LaunchScreen.storyboard in Resources */,
-				ABF5B46B1C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.xib in Resources */,
+				ABF5B46B1C66094100AFA657 /* IAAllByTypeCollectionViewCell.xib in Resources */,
 				AB8F5CBC1C5E90F60055E98C /* Assets.xcassets in Resources */,
 				AB749BF71C63A5070091C4DE /* IAMainTableViewCell.xib in Resources */,
 				AB8F5CBA1C5E90F60055E98C /* Main.storyboard in Resources */,
@@ -347,9 +382,15 @@
 			files = (
 				AB749BFD1C63B2AA0091C4DE /* IAMovieCollection.m in Sources */,
 				AB3F49BB1C5F941600F677B9 /* IAMoviesCollection.m in Sources */,
+				AB0E22D81C679C1D0005FE13 /* IATvsViewController.m in Sources */,
 				ABF5B46E1C660DC100AFA657 /* IAAllMoviesByTypeViewController.m in Sources */,
 				AB749C001C6488000091C4DE /* IAMoviesViewController.m in Sources */,
+				AB0E22ED1C67CD6E0005FE13 /* IAUIConstants.m in Sources */,
+				AB0E22E71C67A7B40005FE13 /* IATv.m in Sources */,
+				AB0E22E41C67A7A30005FE13 /* IATvCollection.m in Sources */,
+				AB0E22DB1C679C3F0005FE13 /* IAAllTvsByTypeViewController.m in Sources */,
 				AB3F49C21C5F9FC100F677B9 /* IAFormatterHelper.m in Sources */,
+				AB0E22DE1C679C580005FE13 /* IASingleTvViewController.m in Sources */,
 				AB3F49BE1C5F959400F677B9 /* IAMovie.m in Sources */,
 				AB3F49C61C5FA2E300F677B9 /* IAMovieDbClient.m in Sources */,
 				AB24BE5B1C6364CE007CF427 /* IAUrlConstants.m in Sources */,
@@ -357,7 +398,8 @@
 				AB24BE5F1C636A4D007CF427 /* IASingleMovieViewController.m in Sources */,
 				AB8F5CB11C5E90F50055E98C /* main.m in Sources */,
 				AB749BFA1C63A8B30091C4DE /* IAMainTableViewCell.m in Sources */,
-				ABF5B46A1C66094100AFA657 /* IAAllMoviesByTypeCollectionViewCell.m in Sources */,
+				AB0E22E11C67A78C0005FE13 /* IATvsCollection.m in Sources */,
+				ABF5B46A1C66094100AFA657 /* IAAllByTypeCollectionViewCell.m in Sources */,
 				AB27E88D1C62379A0056D21F /* IAGenre.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 @property (copy, nonatomic, readonly) NSString *title;
 @property (copy, nonatomic, readonly) NSString *overview;
 @property (copy, nonatomic, readonly) NSNumber *budget;
-@property (copy, nonatomic, readonly) NSDate *releaseDate;
+@property (copy, nonatomic, readonly) NSString *releaseDate;
 @property (copy, nonatomic, readonly) NSArray *genres;
 @property (copy, nonatomic, readonly) NSString *urlImage;
 @property (copy, nonatomic, readonly) NSNumber *runtime;

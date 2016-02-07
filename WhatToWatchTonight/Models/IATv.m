@@ -1,20 +1,19 @@
-#import "IAMovie.h"
-#import "IAFormatterHelper.h"
+#import "IATv.h"
 #import "IAGenre.h"
 
-@implementation IAMovie
-
+@implementation IATv
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"movieId": @"id",
-             @"title": @"title",
+             @"tvId": @"id",
+             @"title": @"name",
              @"overview": @"overview",
-             @"budget" : @"budget",
-             @"releaseDate" : @"release_date",
+             @"firstAirDate" : @"first_air_date",
+             @"lastAirDate" : @"last_air_date",
+             @"numberOfEpisodes" : @"number_of_episodes",
+             @"numberOfSeasons" : @"number_of_seasons",
              @"genres": @"genres",
              @"urlImage" : @"poster_path",
-             @"runtime" : @"runtime",
-             @"revenue" : @"revenue",
+             @"runtime" : @"episode_run_time",
              @"voteAverage" : @"vote_average"
              };
 }
@@ -22,6 +21,5 @@
 +(NSValueTransformer *) genresJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:IAGenre.class];
 }
-
 
 @end

@@ -1,19 +1,20 @@
-#import "IAAllMoviesByTypeViewController.h"
-#import "IAAllByTypeCollectionViewCell.h"
-#import "IAMovieCollection.h"
-#import "IAUrlConstants.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "IAAllTvsByTypeViewController.h"
 #import "IAMovieDbClient.h"
-#import "IAAppDelegate.h"
+#import "IATvCollection.h"
+#import "IATvsCollection.h"
+#import "IAUrlConstants.h"
 #import "MBProgressHUD.h"
-#import "IASingleMovieViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "IAAppDelegate.h"
+#import "IAAllByTypeCollectionViewCell.h"
+#import "IASingleTvViewController.h"
 #import "IAUIConstants.h"
 
-@interface IAAllMoviesByTypeViewController ()
+@interface IAAllTvsByTypeViewController ()
 
 @end
 
-@implementation IAAllMoviesByTypeViewController
+@implementation IAAllTvsByTypeViewController
 {
     IAMovieDbClient *_client;
     NSDictionary *_parameters;
@@ -30,10 +31,10 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.movies.count;
+    return self.tvs.count;
 }
 
--(void)loadMoreMovies {
+-(void)loadMoreTvs {
     __weak id weakSelf = self;
     _currentPage += 1;
     _parameters = @{
@@ -41,11 +42,12 @@
                     IAPageName : [NSNumber numberWithInteger:_currentPage]
                     };
     
-    [_client GET:self.moviesTypeUrl parameters:_parameters completion:^(OVCResponse * _Nullable response, NSError * _Nullable error) {
+    [_client GET:self.tvsTypeUrl parameters:_parameters completion:^(OVCResponse * _Nullable response, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             if (error == nil) {
-                id _moreMovies = response.result;
-                [[weakSelf movies] addObjectsFromArray:[_moreMovies movies]];
+                IATvsCollection *_moreTvs = response.result;
+                [[weakSelf tvs] addObjectsFromArray:[_moreTvs tvs]];
             }
             else {
                 IAAppDelegate *delegate = (IAAppDelegate *)[UIApplication sharedApplication].delegate;
@@ -70,9 +72,9 @@
         cell = [[IAAllByTypeCollectionViewCell alloc] init];
     }
     
-    IAMovieCollection *movie = self.movies[indexPath.row];
-    if (movie.urlImage != nil) {
-        NSURL *firstImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:movie.urlImage]];
+    IATvCollection *tv = self.tvs[indexPath.row];
+    if (tv.urlImage != nil) {
+        NSURL *firstImageUrl = [NSURL URLWithString:[IAImageSmallBaseUrl stringByAppendingString:tv.urlImage]];
         [cell.image sd_setImageWithURL:firstImageUrl
                       placeholderImage:defaultImage];
     }
@@ -80,7 +82,7 @@
         cell.image.image = defaultImage;
     }
     
-    cell.image.tag = [movie.movieId integerValue];
+    cell.image.tag = [tv.tvId integerValue];
     
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
@@ -89,22 +91,22 @@
     
     [cell.image addGestureRecognizer:tap];
     
-    cell.label.text = movie.title;
+    cell.label.text = tv.title;
     
-    if (indexPath.row == [self.movies count] - 1) {
-        [self loadMoreMovies];
+    if (indexPath.row == [self.tvs count] - 1) {
+        [self loadMoreTvs];
     }
     return cell;
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([[segue identifier] isEqual:IAGotoSingleMovieScene]) {
-        IASingleMovieViewController *vc = [segue destinationViewController];
-        vc.movieID = [sender tag];
+    if([[segue identifier] isEqual:IAShowSingleTvScene]) {
+        IASingleTvViewController *vc = [segue destinationViewController];
+        vc.tvID = [sender tag];
     }
 }
 
 -(void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
     UIImageView *cell = (UIImageView*)gestureRecognizer.view;
-    [self performSegueWithIdentifier:IAGotoSingleMovieScene sender:cell];
+    [self performSegueWithIdentifier:IAShowSingleTvScene sender:cell];
 }
 @end

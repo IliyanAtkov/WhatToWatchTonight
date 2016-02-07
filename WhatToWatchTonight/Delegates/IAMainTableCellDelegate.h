@@ -3,5 +3,4 @@
 
 @protocol IAMainTableCellDelegate <NSObject>
 -(void) seeAllWasTapped: (IAMainTableViewCell*) cell;
--(void) imageWasTapped: (IAMainTableViewCell*) cell;
 @end
